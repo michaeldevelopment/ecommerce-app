@@ -1,0 +1,14 @@
+$dark-orange: #d87d4a;
+$clear-orange: #fbaf85;
+$black: #191919;
+$white: #fff;
+$dark-gray: #f1f1f1;
+$clear-gray: #fafafa;
+
+@mixin text-white-with-opacity($opacityValue) {
+  color: rgb(255, 255, 255, $opacityValue);
+}
+
+@mixin text-black-with-opacity($opacityValue) {
+  color: rgb(0, 0, 0, $opacityValue);
+}

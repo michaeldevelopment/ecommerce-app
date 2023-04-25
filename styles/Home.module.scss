@@ -1,0 +1,57 @@
+@use "colors.scss";
+
+.heroSection {
+  background-image: url("../public/home/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: 0% 90%;
+  height: 800px;
+
+  & > div {
+    position: relative;
+    top: 200px;
+    left: 200px;
+    width: 800px;
+    small {
+      @include colors.text-white-with-opacity(0.3);
+    }
+
+    h1 {
+      color: colors.$white;
+    }
+
+    p {
+      @include colors.text-white-with-opacity(0.7);
+      width: 400px;
+    }
+
+    button {
+      background-color: colors.$dark-orange;
+      color: colors.$white;
+      border-style: none;
+      padding: 10px 15px;
+    }
+  }
+}
+
+.categoryProductsPreview {
+  width: 350px;
+  height: 200px;
+  background-color: colors.$dark-gray;
+  border-radius: 15px;
+  position: relative;
+
+  & > div {
+    position: relative;
+    top: 100px;
+    text-align: center;
+
+    h3 {
+      color: colors.$black;
+    }
+
+    small {
+      @include colors.text-black-with-opacity(0.7);
+      font-weight: bold;
+    }
+  }
+}
