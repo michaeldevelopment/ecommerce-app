@@ -1,0 +1,6 @@
+@mixin buttonStyle($backgrColor, $textColor) {
+  background-color: $backgrColor;
+  color: $textColor;
+  border-style: none;
+  padding: 10px 15px;
+}

@@ -1,4 +1,5 @@
 @use "colors.scss";
+@use "button.scss";
 
 .heroSection {
   background-image: url("../public/home/desktop/image-hero.jpg");
@@ -25,33 +26,148 @@
     }
 
     button {
-      background-color: colors.$dark-orange;
-      color: colors.$white;
-      border-style: none;
-      padding: 10px 15px;
+      @include button.buttonStyle(colors.$dark-orange, colors.$white);
     }
   }
 }
 
-.categoryProductsPreview {
-  width: 350px;
-  height: 200px;
-  background-color: colors.$dark-gray;
-  border-radius: 15px;
-  position: relative;
+.categoryProductsPreviewParent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+  width: 65vw;
+  margin: 0 auto;
+
+  .categoryProductsPreview {
+    width: 350px;
+    height: 200px;
+    background-color: colors.$dark-gray;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 150px;
+
+    img {
+      max-width: 60%;
+      height: 185px;
+      margin-top: -60px;
+      object-fit: scale-down;
+    }
+
+    & > div {
+      h3 {
+        margin: 0;
+        color: colors.$black;
+        text-transform: capitalize;
+      }
+
+      small {
+        @include colors.text-black-with-opacity(0.7);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@mixin paddingTextProductPosts($topValue) {
+  padding: $topValue 0 0 10%;
+}
+
+.productPosts {
+  margin: 0 auto;
+  width: 65vw;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  button {
+    @include button.buttonStyle(colors.$black, colors.$white);
+  }
+
+  div {
+    border-radius: 10px;
+  }
+
+  div:first-child {
+    background-color: colors.$dark-orange;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    h2 {
+      color: colors.$white;
+    }
+
+    p {
+      @include colors.text-white-with-opacity(0.8);
+    }
+
+    span {
+      align-self: center;
+      width: 250px;
+    }
+
+    img {
+      align-self: flex-end;
+      margin-bottom: -3px;
+    }
+  }
+
+  div:nth-child(2) {
+    background-image: url("../public/home/desktop/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-position: 0% 60%;
+    height: 250px;
+    @include paddingTextProductPosts(5%);
+  }
+
+  div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    img {
+      border-radius: 15px;
+    }
+
+    span {
+      @include paddingTextProductPosts(10%);
+      border-radius: 15px;
+      background-color: colors.$dark-gray;
+      flex-grow: 1;
+    }
+  }
+}
+
+.preFooterSection {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  margin: 0 auto;
+  gap: 70px;
+  margin-top: 100px;
 
   & > div {
-    position: relative;
-    top: 100px;
-    text-align: center;
+    align-self: center;
 
-    h3 {
-      color: colors.$black;
+    h1 {
+      text-transform: uppercase;
     }
 
-    small {
-      @include colors.text-black-with-opacity(0.7);
-      font-weight: bold;
+    p {
+      @include colors.text-black-with-opacity(0.5);
     }
+
+    span {
+      color: colors.$dark-orange;
+    }
+  }
+
+  img {
+    border-radius: 15px;
   }
 }

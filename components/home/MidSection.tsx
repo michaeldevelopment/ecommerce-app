@@ -1,24 +1,50 @@
 import React from "react";
 import styles from "../../styles/Home.module.scss";
+import CategoryPreview from "../CategoryPreview";
 import Image from "next/image";
-import image from "../../public/home/products-preview/headphone.png";
+import PreFooterSection from "../PreFooterSection";
 
 export default function MidSection() {
   return (
     <>
-      <div className={styles.categoryProductsPreview}>
-        <Image
-          src="/home/products-preview/headphone.png"
-          alt="headphones"
-          width={180}
-          height={242}
-          quality={90}
-        />
+      <div className={styles.categoryProductsPreviewParent}>
+        <CategoryPreview />
+      </div>
+
+      <div className={styles.productPosts}>
         <div>
-          <h3> Headphones </h3>
-          <small> SHOP - </small>
+          <Image
+            src="/home/desktop/image-speaker-zx9.png"
+            alt="speakers"
+            width={270}
+            height={328}
+          />
+          <span>
+            <h2>ZX9 SPEAKER</h2>
+            <p>
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <button> SEE PRODUCT </button>
+          </span>
+        </div>
+        <div>
+          <h2> ZX7 SPEAKER</h2> <button> SEE PRODUCT </button>
+        </div>
+        <div>
+          <Image
+            src="/home/desktop/image-earphones-yx1.jpg"
+            alt="earphones-yx1"
+            width={540}
+            height={320}
+          />
+          <span>
+            <h2> YX1 EARPHONES</h2> <button> SEE PRODUCT </button>
+          </span>
         </div>
       </div>
+
+      <PreFooterSection />
     </>
   );
 }
