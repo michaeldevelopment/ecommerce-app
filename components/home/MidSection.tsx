@@ -7,9 +7,7 @@ import PreFooterSection from "../PreFooterSection";
 export default function MidSection() {
   return (
     <>
-      <div className={styles.categoryProductsPreviewParent}>
-        <CategoryPreview />
-      </div>
+      <CategoryPreview />
 
       <div className={styles.productPosts}>
         <div>

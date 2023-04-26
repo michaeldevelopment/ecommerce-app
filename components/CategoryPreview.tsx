@@ -5,7 +5,7 @@ import { navlinksLabels } from "../data/navlinks";
 
 const CategoryPreview = () => {
   return (
-    <>
+    <div className={styles.categoryProductsPreviewParent}>
       {navlinksLabels.map((navlinkLabel, index) => {
         return (
           index !== 0 && (
@@ -25,7 +25,7 @@ const CategoryPreview = () => {
           )
         );
       })}
-    </>
+    </div>
   );
 };
 

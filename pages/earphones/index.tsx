@@ -5,12 +5,14 @@ import { pageProductsDataProps } from "../../types/pagesTypes";
 import { productsDataListType } from "../../types/dataTypes";
 import ProductsMap from "../../components/ProductsMap";
 import PreFooterSection from "../../components/PreFooterSection";
+import CategoryPreview from "../../components/CategoryPreview";
 
 export default function EarphonesPage({ products }: pageProductsDataProps) {
   return (
     <>
       <PageTitle titleText="earphones" />
       <ProductsMap products={products} />
+      <CategoryPreview />
       <PreFooterSection />
     </>
   );
