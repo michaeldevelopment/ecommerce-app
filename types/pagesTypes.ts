@@ -1,5 +1,9 @@
-import { productsDataListType } from "./dataTypes";
+import { productsDataInterface, productsDataListType } from "./dataTypes";
 
 export type pageProductsDataProps = {
   products: productsDataListType;
+};
+
+export type pageIndividualProductProps = {
+  product: productsDataInterface;
 };

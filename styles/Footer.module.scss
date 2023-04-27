@@ -1,0 +1,26 @@
+@use "colors.scss";
+
+.footer {
+  margin-top: 10%;
+  background-color: colors.$black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 80px;
+
+  .socialMediaIcons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    width: 600px;
+  }
+}

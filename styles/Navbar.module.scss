@@ -1,16 +1,13 @@
 @use "colors.scss";
+@use "navlinks.scss";
 
 .navbar {
   display: flex;
   justify-content: space-around;
   padding: 30px 0px;
   background-color: colors.$black;
-  color: colors.$dark-gray;
+}
 
-  .navbarLinks {
-    a {
-      text-transform: uppercase;
-      padding: 0 25px;
-    }
-  }
+.navbarLinks {
+  @include navlinks.navlinks-style;
 }

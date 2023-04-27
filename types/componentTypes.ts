@@ -14,3 +14,12 @@ export interface productTextProps {
   name: string;
   description: string;
 }
+
+export interface iconSVGProps {
+  className?: string;
+  fill?: string;
+}
+
+export interface iconSVGBookmarkActionableProps extends iconSVGProps {
+  onClick: () => void;
+}

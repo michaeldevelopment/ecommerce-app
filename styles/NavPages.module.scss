@@ -34,6 +34,13 @@
 
     button {
       @include button.buttonStyle(colors.$dark-orange, colors.$white);
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        background-color: colors.$clear-orange;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
     }
   }
 }

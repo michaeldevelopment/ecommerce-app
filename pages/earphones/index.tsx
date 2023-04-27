@@ -18,7 +18,7 @@ export default function EarphonesPage({ products }: pageProductsDataProps) {
   );
 }
 
-export async function getStaticProps(context: GetStaticProps) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const productsData: productsDataListType = await fetch(
     "http://localhost:3000/api/products"
   ).then((res) => res.json());
@@ -32,4 +32,4 @@ export async function getStaticProps(context: GetStaticProps) {
       products,
     },
   };
-}
+};
