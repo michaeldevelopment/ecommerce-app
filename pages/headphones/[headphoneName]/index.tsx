@@ -4,12 +4,14 @@ import { GetStaticProps } from "next";
 import { pageIndividualProductProps } from "../../../types/pagesTypes";
 import PreFooterSection from "../../../components/PreFooterSection";
 import CategoryPreview from "../../../components/CategoryPreview";
+import ProductDetailContainer from "../../../components/individualProduct/ProductDetailContainer";
 
 export default function HeadphoneDetailPage({
   product,
 }: pageIndividualProductProps) {
   return (
     <>
+      <ProductDetailContainer product={product} />
       <CategoryPreview />
       <PreFooterSection />
     </>

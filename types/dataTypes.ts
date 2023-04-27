@@ -30,13 +30,10 @@ interface otherItemsInterface {
   image: imageProductsInterface;
 }
 
-export interface productsDataInterface {
-  id: number;
+export interface productInterface {
   slug: string;
   name: string;
   image: imageProductsInterface;
-  category: string;
-  categoryImage: imageProductsInterface;
   new: boolean;
   price: number;
   description: string;
@@ -44,6 +41,12 @@ export interface productsDataInterface {
   includes: extraProductItemsInterface[];
   gallery: galleryItemsInterface;
   others: otherItemsInterface[];
+}
+
+export interface productsDataInterface extends productInterface {
+  id: number;
+  category: string;
+  categoryImage: imageProductsInterface;
 }
 
 export type productsDataListType = productsDataInterface[];

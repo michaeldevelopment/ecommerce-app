@@ -1,0 +1,21 @@
+@use "colors.scss";
+
+.cartProductContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+
+  & > div {
+    background-color: colors.$dark-gray;
+
+    button {
+      @include colors.text-black-with-opacity(0.2);
+      background-color: colors.$dark-gray;
+      padding: 10px;
+    }
+
+    span {
+      padding: 10px;
+    }
+  }
+}
