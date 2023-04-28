@@ -33,7 +33,7 @@
       @include colors.text-black-with-opacity(0.7);
     }
 
-    button {
+    a {
       @include button.buttonStyle(colors.$dark-orange, colors.$white);
       transition: all 0.3s ease-in;
 

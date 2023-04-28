@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
-import { categoriesType } from "./dataTypes";
+import {
+  categoriesType,
+  galleryItemsInterface,
+  otherItemsInterface,
+} from "./dataTypes";
 
 export interface navbarProps {
   children: ReactNode;
@@ -13,6 +17,20 @@ export interface productTextProps {
   isNew: boolean;
   name: string;
   description: string;
+  category: string;
+  slug: string;
+}
+
+export interface productDetailTextProps {
+  isNew: boolean;
+  name: string;
+  description: string;
+  price: number;
+  features: string;
+}
+
+export interface otherProductDetailsProps {
+  otherProducts: otherItemsInterface[];
 }
 
 export interface iconSVGProps {
@@ -22,4 +40,8 @@ export interface iconSVGProps {
 
 export interface iconSVGBookmarkActionableProps extends iconSVGProps {
   onClick: () => void;
+}
+
+export interface productDetailGalleryProps {
+  productGallery: galleryItemsInterface;
 }
