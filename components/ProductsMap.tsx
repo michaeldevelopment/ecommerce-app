@@ -26,6 +26,8 @@ export default function ProductsMap({ products }: pageProductsDataProps) {
               isNew={product.new}
               name={product.name}
               description={product.description}
+              category={product.category}
+              slug={product.slug}
             />
           </div>
         );

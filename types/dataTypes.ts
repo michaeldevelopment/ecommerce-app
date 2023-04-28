@@ -18,13 +18,13 @@ interface extraProductItemsInterface {
   item: string;
 }
 
-interface galleryItemsInterface {
+export interface galleryItemsInterface {
   first: imageProductsInterface;
   second: imageProductsInterface;
   third: imageProductsInterface;
 }
 
-interface otherItemsInterface {
+export interface otherItemsInterface {
   slug: string;
   name: string;
   image: imageProductsInterface;

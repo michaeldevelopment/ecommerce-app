@@ -6,7 +6,7 @@ import PreFooterSection from "../../../components/PreFooterSection";
 import CategoryPreview from "../../../components/CategoryPreview";
 import ProductDetailContainer from "../../../components/individualProduct/ProductDetailContainer";
 
-export default function HeadphoneDetailPage({
+export default function SpeakerDetailPage({
   product,
 }: pageIndividualProductProps) {
   return (
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   ).then((res) => res.json());
 
   const paths = productsData.map((product) => ({
-    params: { headphoneName: product.slug },
+    params: { speakerName: product.slug },
   }));
 
   return {
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
 
   const product = productsData.find(
-    (product) => product.slug === params?.headphoneName
+    (product) => product.slug === params?.speakerName
   );
 
   return {

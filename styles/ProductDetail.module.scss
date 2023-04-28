@@ -1,4 +1,5 @@
 @use "colors.scss";
+@use "button.scss";
 
 .cartProductContainer {
   display: flex;
@@ -16,6 +17,70 @@
 
     span {
       padding: 10px;
+    }
+  }
+}
+
+.cartProductDetailsContainer {
+  display: flex;
+  gap: 20%;
+  justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
+
+  p,
+  li {
+    @include colors.text-black-with-opacity(0.5);
+  }
+
+  ul {
+    list-style-type: none;
+
+    span {
+      color: colors.$dark-orange;
+      font-weight: bold;
+    }
+  }
+}
+
+.productDetailGallery {
+  display: flex;
+  gap: 20px;
+  margin-top: 100px;
+  justify-content: center;
+
+  img {
+    border-radius: 15px;
+  }
+
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.productGalleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 80px;
+  justify-content: center;
+  text-align: center;
+
+  img {
+    width: 20vw;
+    height: auto;
+  }
+
+  button {
+    @include button.buttonStyle(colors.$dark-orange, colors.$white);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background-color: colors.$clear-orange;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
     }
   }
 }
