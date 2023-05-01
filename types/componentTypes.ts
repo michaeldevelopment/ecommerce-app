@@ -4,6 +4,7 @@ import {
   galleryItemsInterface,
   otherItemsInterface,
 } from "./dataTypes";
+import { productCartType } from "./globalStateTypes";
 
 export interface navbarProps {
   children: ReactNode;
@@ -44,4 +45,8 @@ export interface iconSVGBookmarkActionableProps extends iconSVGProps {
 
 export interface productDetailGalleryProps {
   productGallery: galleryItemsInterface;
+}
+
+export interface cartProductsProps {
+  cartProducts: productCartType[];
 }

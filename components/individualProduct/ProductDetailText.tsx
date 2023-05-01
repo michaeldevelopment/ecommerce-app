@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { productInterface } from "../../types/dataTypes";
 import styles from "../../styles/ProductDetail.module.scss";
+import { useProductsCartStore } from "../../store";
 
 const ProductDetailText = ({
   new: isNew,
@@ -14,6 +15,9 @@ const ProductDetailText = ({
   gallery,
   others,
 }: productInterface) => {
+  const addProductToCart = useProductsCartStore(
+    (state) => state.addProductToCart
+  );
   const [quantity, setQuantity] = useState<number>(1);
 
   const handleIncreaseQuantity = () => {
@@ -22,6 +26,17 @@ const ProductDetailText = ({
 
   const handleDecreaseQuantity = () => {
     quantity !== 1 ? setQuantity(quantity - 1) : setQuantity(1);
+  };
+
+  const handleAddProductToCart = () => {
+    const productObject = {
+      name,
+      price,
+      image: `/cart/image-${slug}`,
+      quantity,
+    };
+
+    addProductToCart(productObject);
   };
 
   return (
@@ -36,7 +51,7 @@ const ProductDetailText = ({
           <span> {quantity} </span>
           <button onClick={handleIncreaseQuantity}> + </button>
         </div>
-        <button> ADD TO CART </button>
+        <button onClick={handleAddProductToCart}> ADD TO CART </button>
       </div>
     </span>
   );

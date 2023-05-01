@@ -9,7 +9,6 @@ export default function ProductText({
   category,
   slug,
 }: productTextProps) {
-  console.log(category, slug);
   return (
     <span>
       {isNew && <small> NEW PRODUCT </small>}
