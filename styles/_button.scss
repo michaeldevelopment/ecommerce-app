@@ -1,6 +1,42 @@
-@mixin buttonStyle($backgrColor, $textColor) {
+@use "colors.scss";
+
+@mixin buttonStyle($backgrColor, $textColor, $textColorHover) {
   background-color: $backgrColor;
   color: $textColor;
   border-style: none;
   padding: 10px 15px;
+
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    background-color: $textColorHover;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+  }
+}
+
+@mixin buttonHandleQuantityStyle() {
+  padding: 10px 15px;
+  background-color: colors.$clear-gray;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  button {
+    border-style: none;
+    background: none;
+    transition: all 0.3s ease-in;
+    @include colors.text-black-with-opacity(0.5);
+
+    &:hover {
+      background-color: colors.$clear-orange;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+    }
+  }
+
+  span {
+    font-weight: bold;
+  }
 }

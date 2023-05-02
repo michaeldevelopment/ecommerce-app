@@ -1,27 +1,21 @@
 @use "colors.scss";
 @use "button.scss";
 
-.cartProductContainer {
+.productContainer {
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
 
   & > div {
     background-color: colors.$dark-gray;
+  }
 
-    button {
-      @include colors.text-black-with-opacity(0.2);
-      background-color: colors.$dark-gray;
-      padding: 10px;
-    }
-
-    span {
-      padding: 10px;
-    }
+  .productQuantityContainer {
+    @include button.buttonHandleQuantityStyle();
   }
 }
 
-.cartProductDetailsContainer {
+.productDetailContainer {
   display: flex;
   gap: 20%;
   justify-content: center;
@@ -71,16 +65,5 @@
   img {
     width: 20vw;
     height: auto;
-  }
-
-  button {
-    @include button.buttonStyle(colors.$dark-orange, colors.$white);
-    transition: all 0.3s ease-in;
-
-    &:hover {
-      background-color: colors.$clear-orange;
-      transition: all 0.3s ease-out;
-      cursor: pointer;
-    }
   }
 }

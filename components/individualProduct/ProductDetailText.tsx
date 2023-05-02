@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { productInterface } from "../../types/dataTypes";
-import styles from "../../styles/ProductDetail.module.scss";
+import productDetailStyles from "../../styles/ProductDetail.module.scss";
+import navPagesStyle from "../../styles/NavPages.module.scss";
 import { useProductsCartStore } from "../../store";
 
 const ProductDetailText = ({
@@ -32,7 +33,7 @@ const ProductDetailText = ({
     const productObject = {
       name,
       price,
-      image: `/cart/image-${slug}`,
+      image: `/cart/image-${slug}.jpg`,
       quantity,
     };
 
@@ -45,13 +46,18 @@ const ProductDetailText = ({
       <h1>{name}</h1>
       <p>{description}</p>
       <h3> ${price}</h3>
-      <div className={styles.cartProductContainer}>
-        <div>
+      <div className={productDetailStyles.productContainer}>
+        <div className={productDetailStyles.productQuantityContainer}>
           <button onClick={handleDecreaseQuantity}> - </button>
           <span> {quantity} </span>
           <button onClick={handleIncreaseQuantity}> + </button>
         </div>
-        <button onClick={handleAddProductToCart}> ADD TO CART </button>
+        <button
+          className={navPagesStyle.addProductToCart}
+          onClick={handleAddProductToCart}
+        >
+          ADD TO CART
+        </button>
       </div>
     </span>
   );

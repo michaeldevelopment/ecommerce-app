@@ -1,6 +1,6 @@
 import React from "react";
-import CartProducts from "../../components/cart/CartProducts";
+import CartProductsContainer from "../../components/cartComponents/CartProductsContainer";
 
 export default function CartPage() {
-  return <CartProducts />;
+  return <CartProductsContainer />;
 }

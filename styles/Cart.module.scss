@@ -1,0 +1,76 @@
+@use "colors.scss";
+@use "button.scss";
+
+.cartProductContainer {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  border-radius: 15px;
+
+  .cartProductHeading {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      color: colors.$black;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      @include colors.text-black-with-opacity(0.5);
+      text-decoration: underline;
+    }
+  }
+
+  .cartProductMap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+
+      & > div:first-of-type {
+        text-align: left;
+        width: 100px;
+      }
+
+      & > div:last-of-type {
+        align-self: center;
+        @include button.buttonHandleQuantityStyle();
+      }
+    }
+  }
+}
+
+.cartProductCheckout {
+  padding-top: 20px;
+
+  span {
+    float: left;
+    @include colors.text-black-with-opacity(0.5);
+    font-weight: 600;
+  }
+
+  strong {
+    float: right;
+    color: colors.$black;
+  }
+
+  button {
+    position: relative;
+    top: 20px;
+    display: block;
+    width: 100%;
+
+    @include button.buttonStyle(
+      colors.$dark-orange,
+      colors.$white,
+      colors.$clear-orange
+    );
+  }
+}

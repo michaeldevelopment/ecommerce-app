@@ -26,7 +26,11 @@
     }
 
     button {
-      @include button.buttonStyle(colors.$dark-orange, colors.$white);
+      @include button.buttonStyle(
+        colors.$dark-orange,
+        colors.$white,
+        colors.$clear-orange
+      );
     }
   }
 }
@@ -84,7 +88,11 @@
   gap: 30px;
 
   button {
-    @include button.buttonStyle(colors.$black, colors.$white);
+    @include button.buttonStyle(
+      colors.$black,
+      colors.$white,
+      colors.$clear-orange
+    );
   }
 
   div {
