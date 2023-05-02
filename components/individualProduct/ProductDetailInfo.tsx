@@ -24,7 +24,7 @@ const ProductDetailInfo = ({ product }: pageIndividualProductProps) => {
           image={product.image}
         />
       </div>
-      <div className={productCartStyles.cartProductDetailsContainer}>
+      <div className={productCartStyles.productDetailContainer}>
         <div>
           <h2> FEATURES </h2>
           <p> {product.features} </p>

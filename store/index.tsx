@@ -26,5 +26,31 @@ export const useProductsCartStore = create<productCartStateType>(
 
       set({ productsCart: newProductsCart });
     },
+
+    handleQuantityCartProduct: (quantity, productName) => {
+      const { productsCart } = get();
+      let newProductsCart = structuredClone(productsCart);
+      const productIndex = newProductsCart.findIndex(
+        (productElement) => productName === productElement.name
+      );
+
+      const newProductInfo = newProductsCart[productIndex];
+
+      newProductsCart[productIndex] = {
+        ...newProductInfo,
+        quantity: newProductInfo.quantity + quantity,
+      };
+
+      newProductsCart[productIndex].quantity === 0 &&
+        (newProductsCart = productsCart.filter(
+          (product) => product.name !== productName
+        ));
+
+      set({ productsCart: newProductsCart });
+    },
+
+    removeAllCartProducts: () => {
+      set({ productsCart: [] });
+    },
   })
 );

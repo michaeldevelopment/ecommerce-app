@@ -8,4 +8,6 @@ export interface productCartType {
 export interface productCartStateType {
   productsCart: productCartType[];
   addProductToCart: (product: productCartType) => void;
+  handleQuantityCartProduct: (quantity: number, productName: string) => void;
+  removeAllCartProducts: () => void;
 }
