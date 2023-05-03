@@ -66,4 +66,12 @@
     width: 20vw;
     height: auto;
   }
+
+  button {
+    @include button.buttonStyle(
+      colors.$dark-orange,
+      colors.$white,
+      colors.$clear-orange
+    );
+  }
 }

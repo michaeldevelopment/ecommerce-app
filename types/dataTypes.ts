@@ -3,7 +3,6 @@ export type navlinksType = {
   earphones: string;
   speakers: string;
   headphones: string;
-  cart: string;
 };
 
 export type categoriesType = "headphones" | "earphones" | "speakers";

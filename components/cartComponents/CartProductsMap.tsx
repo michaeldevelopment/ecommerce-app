@@ -4,7 +4,10 @@ import { cartProductsProps } from "../../types/componentTypes";
 import styles from "../../styles/Cart.module.scss";
 import Image from "next/image";
 
-const CartProductsMap = ({ cartProducts }: cartProductsProps) => {
+const CartProductsMap = ({
+  cartProducts,
+  isInCheckoutPage,
+}: cartProductsProps) => {
   const handleQuantityCartProduct = useProductsCartStore(
     (state) => state.handleQuantityCartProduct
   );
@@ -32,15 +35,21 @@ const CartProductsMap = ({ cartProducts }: cartProductsProps) => {
               <h3> {product.name.split(" ")[0]} </h3>
               <p> ${product.price} </p>
             </div>
-            <div>
-              <button onClick={(e) => handleQuantity(e, product.name)}>
-                -
-              </button>
-              <span> {product.quantity} </span>
-              <button onClick={(e) => handleQuantity(e, product.name)}>
-                +
-              </button>
-            </div>
+            {!isInCheckoutPage ? (
+              <div>
+                <button onClick={(e) => handleQuantity(e, product.name)}>
+                  -
+                </button>
+                <span> {product.quantity} </span>
+                <button onClick={(e) => handleQuantity(e, product.name)}>
+                  +
+                </button>
+              </div>
+            ) : (
+              <div>
+                <strong> x{product.quantity}</strong>
+              </div>
+            )}
           </div>
         );
       })}

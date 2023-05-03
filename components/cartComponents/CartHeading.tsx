@@ -4,8 +4,12 @@ import styles from "../../styles/Cart.module.scss";
 
 const CartHeading = ({
   cartProductsLength,
+  isInCheckoutPage,
+  textHeading,
 }: {
   cartProductsLength: number;
+  isInCheckoutPage: boolean;
+  textHeading: string;
 }) => {
   const removeAllCartProducts = useProductsCartStore(
     (state) => state.removeAllCartProducts
@@ -13,8 +17,16 @@ const CartHeading = ({
 
   return (
     <div className={styles.cartProductHeading}>
-      <h2> CART({cartProductsLength})</h2>
-      <button onClick={() => removeAllCartProducts()}> Remove all</button>
+      {!isInCheckoutPage ? (
+        <>
+          <h2>
+            {textHeading.toUpperCase()}({cartProductsLength})
+          </h2>
+          <button onClick={() => removeAllCartProducts()}> Remove all</button>
+        </>
+      ) : (
+        <h2> {textHeading.toUpperCase()}</h2>
+      )}
     </div>
   );
 };
