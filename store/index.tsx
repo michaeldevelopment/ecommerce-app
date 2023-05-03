@@ -4,6 +4,8 @@ import { productCartStateType } from "../types/globalStateTypes";
 export const useProductsCartStore = create<productCartStateType>(
   (set, get) => ({
     productsCart: [],
+    grandTotalCheckoutPay: 0,
+    setShowCart: () => null,
 
     addProductToCart: (product) => {
       const { productsCart } = get();
@@ -16,12 +18,10 @@ export const useProductsCartStore = create<productCartStateType>(
       productIndex < 0
         ? newProductsCart.push({
             ...product,
-            price: product.quantity * product.price,
           })
         : (newProductsCart[productIndex] = {
             ...newProductInfo,
             quantity: newProductInfo.quantity + product.quantity,
-            price: (newProductInfo.quantity + product.quantity) * product.price,
           });
 
       set({ productsCart: newProductsCart });
@@ -51,6 +51,14 @@ export const useProductsCartStore = create<productCartStateType>(
 
     removeAllCartProducts: () => {
       set({ productsCart: [] });
+    },
+
+    addSetShowCartFunction: (setShowCart) => {
+      set({ setShowCart });
+    },
+
+    setGrandTotalCheckoutPay: (price) => {
+      set({ grandTotalCheckoutPay: price });
     },
   })
 );

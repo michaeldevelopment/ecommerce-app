@@ -18,7 +18,7 @@ export default function EarphonesPage({ products }: pageProductsDataProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const productsData: productsDataListType = await fetch(
     "http://localhost:3000/api/products"
   ).then((res) => res.json());

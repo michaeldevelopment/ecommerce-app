@@ -1,10 +1,9 @@
 import React from "react";
 import { navbarProps } from "../types/componentTypes";
-import { navlinksLabels, navlinksUrls } from "../data/navlinks";
-import Link from "next/link";
 import styles from "../styles/Navbar.module.scss";
 import NavLinksMap from "./NavLinksMap";
 import Footer from "./Footer";
+import CartLayout from "./cartComponents/CartLayout";
 
 const LayoutNavbar = ({ children }: navbarProps) => {
   return (
@@ -12,7 +11,7 @@ const LayoutNavbar = ({ children }: navbarProps) => {
       <div className={styles.navbar}>
         <div> Logo </div>
         <NavLinksMap />
-        <div> carrito </div>
+        <CartLayout />
       </div>
       {children}
       <Footer />

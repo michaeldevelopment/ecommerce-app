@@ -49,4 +49,10 @@ export interface productDetailGalleryProps {
 
 export interface cartProductsProps {
   cartProducts: productCartType[];
+  isInCheckoutPage?: boolean;
+}
+
+export interface cartProductsContainerProps {
+  isInCheckoutPage: boolean;
+  textHeading: string;
 }

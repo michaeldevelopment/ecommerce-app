@@ -3,10 +3,10 @@
 
 .cartProductContainer {
   width: 400px;
-  margin: 0 auto;
   text-align: center;
   padding: 40px;
   border-radius: 15px;
+  background-color: colors.$white;
 
   .cartProductHeading {
     display: flex;
@@ -50,20 +50,32 @@
 .cartProductCheckout {
   padding-top: 20px;
 
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+
+    &:last-of-type {
+      margin-top: 30px;
+
+      strong {
+        color: colors.$dark-orange;
+      }
+    }
+  }
+
   span {
-    float: left;
     @include colors.text-black-with-opacity(0.5);
     font-weight: 600;
   }
 
   strong {
-    float: right;
     color: colors.$black;
   }
 
+  a,
   button {
-    position: relative;
-    top: 20px;
+    margin-top: 20px;
     display: block;
     width: 100%;
 

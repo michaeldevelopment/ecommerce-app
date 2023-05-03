@@ -5,7 +5,6 @@ export const navlinks: navlinksType = {
   earphones: "/earphones",
   speakers: "/speakers",
   headphones: "/headphones",
-  cart: "/cart",
 };
 
 export const navlinksLabels = Object.keys(navlinks);
