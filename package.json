@@ -8,11 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "bootstrap": "^5.2.3",
+    "i": "^0.3.7",
     "next": "13.3.1",
+    "npm": "^9.6.6",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "sass": "^1.60.0",
     "zustand": "^4.3.7"
   },

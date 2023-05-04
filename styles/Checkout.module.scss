@@ -12,7 +12,42 @@
     border-radius: 15px;
     background-color: colors.$white;
     width: 40vw;
-    padding: 40px;
+    padding: 50px;
+
+    div {
+      padding: 20px 0px;
+
+      p {
+        display: block;
+        font-weight: 500;
+        color: colors.$dark-orange;
+      }
+
+      label {
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      input {
+        display: block;
+        margin: 10px 0px;
+        width: 100%;
+        border: 1px solid rgb(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 15px;
+      }
+
+      input.error {
+        border: 1px solid colors.$red-error;
+      }
+
+      small {
+        display: block;
+        color: colors.$red-error;
+        margin: 0px 0px 15px 0px;
+        transition: all 1s ease-out;
+      }
+    }
   }
 }
 
