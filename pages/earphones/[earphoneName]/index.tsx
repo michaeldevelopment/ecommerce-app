@@ -5,12 +5,14 @@ import { pageIndividualProductProps } from "../../../types/pagesTypes";
 import PreFooterSection from "../../../components/PreFooterSection";
 import CategoryPreview from "../../../components/CategoryPreview";
 import ProductDetailContainer from "../../../components/individualProduct/ProductDetailContainer";
+import GoPreviousPageButton from "../../../components/GoPreviousPageButton";
 
 export default function EarphoneDetailPage({
   product,
 }: pageIndividualProductProps) {
   return (
     <>
+      <GoPreviousPageButton />
       <ProductDetailContainer product={product} />
       <CategoryPreview />
       <PreFooterSection />
@@ -23,9 +25,13 @@ export async function getStaticPaths() {
     "http://localhost:3000/api/products"
   ).then((res) => res.json());
 
-  const paths = productsData.map((product) => ({
-    params: { earphoneName: product.slug },
-  }));
+  const paths = productsData
+    .filter((product) => product.category === "earphones")
+    .map((product) => ({
+      params: { earphoneName: product.slug },
+    }));
+
+  console.log(paths);
 
   return {
     paths,

@@ -4,35 +4,43 @@ import styles from "../../styles/NavPages.module.scss";
 import productCartStyles from "../../styles/ProductDetail.module.scss";
 import Image from "next/image";
 import ProductDetailText from "./ProductDetailText";
+import GoPreviousPageButton from "../GoPreviousPageButton";
 
-const ProductDetailInfo = ({ product }: pageIndividualProductProps) => {
-  const { id, image, slug, category, categoryImage, ...productRest } = product;
-
+const ProductDetailInfo = ({
+  product: {
+    slug,
+    name,
+    image,
+    new: isNew,
+    price,
+    description,
+    features,
+    includes,
+  },
+}: pageIndividualProductProps) => {
   return (
-    <div>
+    <>
       <div className={styles.productsMapContainer}>
         <Image
           src={image.desktop}
           alt={slug}
-          width={450}
-          height={467}
+          width={400}
+          height={415}
           quality={90}
         />
         <ProductDetailText
-          {...productRest}
-          slug={product.slug}
-          image={product.image}
+          {...{ name, new: isNew, price, slug, description }}
         />
       </div>
       <div className={productCartStyles.productDetailContainer}>
         <div>
           <h2> FEATURES </h2>
-          <p> {product.features} </p>
+          <p> {features} </p>
         </div>
         <div>
           <h2> IN THE BOX </h2>
           <ul>
-            {product.includes.map((element) => {
+            {includes.map((element) => {
               return (
                 <li key={element.item}>
                   <span> {element.quantity}x </span> {element.item}
@@ -42,7 +50,7 @@ const ProductDetailInfo = ({ product }: pageIndividualProductProps) => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

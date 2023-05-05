@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import { navlinksLabels } from "../data/navlinks";
+import Link from "next/link";
 
 const CategoryPreview = () => {
   return (
@@ -19,7 +20,7 @@ const CategoryPreview = () => {
               />
               <div>
                 <h3> {navlinkLabel} </h3>
-                <small> SHOP - </small>
+                <Link href={`${navlinkLabel}`}> SHOP - </Link>
               </div>
             </div>
           )

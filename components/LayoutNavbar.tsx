@@ -4,15 +4,16 @@ import styles from "../styles/Navbar.module.scss";
 import NavLinksMap from "./NavLinksMap";
 import Footer from "./Footer";
 import CartLayout from "./cartComponents/CartLayout";
+import LogoIcon from "../svg/LogoIcon";
 
 const LayoutNavbar = ({ children }: navbarProps) => {
   return (
     <>
-      <div className={styles.navbar}>
-        <div> Logo </div>
+      <nav className={styles.navbar}>
+        <LogoIcon />
         <NavLinksMap />
         <CartLayout />
-      </div>
+      </nav>
       {children}
       <Footer />
     </>

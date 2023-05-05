@@ -12,8 +12,9 @@
     top: 200px;
     left: 200px;
     width: 800px;
+
     small {
-      @include colors.text-white-with-opacity(0.3);
+      @include colors.text-white-with-opacity(0.7);
     }
 
     h1 {
@@ -25,7 +26,9 @@
       width: 400px;
     }
 
-    button {
+    a {
+      position: relative;
+      top: 15px;
       @include button.buttonStyle(
         colors.$dark-orange,
         colors.$white,
@@ -67,9 +70,15 @@
         text-transform: capitalize;
       }
 
-      small {
-        @include colors.text-black-with-opacity(0.7);
+      a {
+        @include colors.text-black-with-opacity(0.4);
         font-weight: bold;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          color: colors.$dark-orange;
+          transition: all 0.3s ease-out;
+        }
       }
     }
   }
@@ -87,7 +96,10 @@
   flex-direction: column;
   gap: 30px;
 
-  button {
+  a {
+    position: relative;
+    top: 15px;
+
     @include button.buttonStyle(
       colors.$black,
       colors.$white,
@@ -153,11 +165,10 @@
 
 .preFooterSection {
   display: flex;
-  justify-content: center;
-  width: 60vw;
-  margin: 0 auto;
   gap: 70px;
-  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 80px 0 80px 0;
 
   & > div {
     align-self: center;
@@ -168,6 +179,7 @@
 
     p {
       @include colors.text-black-with-opacity(0.5);
+      width: 500px;
     }
 
     span {

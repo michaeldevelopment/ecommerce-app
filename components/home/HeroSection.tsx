@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/Home.module.scss";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button> SEE PRODUCT </button>
+        <Link href={"/headphones/xx99-mark-two-headphones"}> SEE PRODUCT </Link>
       </div>
     </div>
   );

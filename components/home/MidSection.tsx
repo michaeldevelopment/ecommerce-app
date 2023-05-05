@@ -3,6 +3,7 @@ import styles from "../../styles/Home.module.scss";
 import CategoryPreview from "../CategoryPreview";
 import Image from "next/image";
 import PreFooterSection from "../PreFooterSection";
+import Link from "next/link";
 
 export default function MidSection() {
   return (
@@ -23,11 +24,12 @@ export default function MidSection() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <button> SEE PRODUCT </button>
+            <Link href={"/speakers/zx9-speaker"}> SEE PRODUCT </Link>
           </span>
         </div>
         <div>
-          <h2> ZX7 SPEAKER</h2> <button> SEE PRODUCT </button>
+          <h2> ZX7 SPEAKER</h2>{" "}
+          <Link href={"/speakers/zx7-speaker"}> SEE PRODUCT </Link>
         </div>
         <div>
           <Image
@@ -37,7 +39,8 @@ export default function MidSection() {
             height={320}
           />
           <span>
-            <h2> YX1 EARPHONES</h2> <button> SEE PRODUCT </button>
+            <h2> YX1 EARPHONES</h2>{" "}
+            <Link href={"/earphones/yx1-earphones"}> SEE PRODUCT </Link>
           </span>
         </div>
       </div>

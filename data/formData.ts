@@ -73,8 +73,8 @@ export const formData: formDataValuesType = [
         message: "Address is too short (+8 characters)",
       },
       maxLength: {
-        value: 20,
-        message: "Address is too long (-20 characters)",
+        value: 30,
+        message: "Address is too long (-30 characters)",
       },
     },
   },

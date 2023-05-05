@@ -13,7 +13,7 @@ export default function Footer() {
       </div>
       <div>
         <p>
-          Audiophile is an all in one stop to fulfill your audio needs. We are a
+          Soundify is an all in one stop to fulfill your audio needs. We are a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
           demo facility - we are open 7 days a week.
