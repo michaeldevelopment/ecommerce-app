@@ -50,3 +50,20 @@ export interface productsDataInterface extends productInterface {
 }
 
 export type productsDataListType = productsDataInterface[];
+
+export interface inputValuesInterface {
+  label: string;
+  placeholder: string;
+  type: "text" | "number";
+  slug: string;
+  validateOptions: {
+    [key: string]: validateOptionValuesType;
+  };
+}
+
+export type validateOptionValuesType = {
+  value: boolean | number | string | RegExp;
+  message: string;
+};
+
+export type formDataValuesType = inputValuesInterface[];

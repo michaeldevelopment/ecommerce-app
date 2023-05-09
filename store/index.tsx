@@ -6,6 +6,7 @@ export const useProductsCartStore = create<productCartStateType>(
     productsCart: [],
     grandTotalCheckoutPay: 0,
     setShowCart: () => null,
+    showModalBool: false,
 
     addProductToCart: (product) => {
       const { productsCart } = get();
@@ -59,6 +60,14 @@ export const useProductsCartStore = create<productCartStateType>(
 
     setGrandTotalCheckoutPay: (price) => {
       set({ grandTotalCheckoutPay: price });
+    },
+
+    showModal: () => {
+      set({ showModalBool: true });
+    },
+
+    hideModal: () => {
+      set({ showModalBool: false });
     },
   })
 );

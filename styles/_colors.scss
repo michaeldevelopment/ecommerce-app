@@ -4,6 +4,8 @@ $black: #191919;
 $white: #fff;
 $dark-gray: #f1f1f1;
 $clear-gray: #fafafa;
+$red-error: #f01e2c;
+$green-success: #4bb543;
 
 @mixin text-white-with-opacity($opacityValue) {
   color: rgb(255, 255, 255, $opacityValue);

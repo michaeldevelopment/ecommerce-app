@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import {
   categoriesType,
   galleryItemsInterface,
+  inputValuesInterface,
   otherItemsInterface,
 } from "./dataTypes";
 import { productCartType } from "./globalStateTypes";
@@ -55,4 +56,21 @@ export interface cartProductsProps {
 export interface cartProductsContainerProps {
   isInCheckoutPage: boolean;
   textHeading: string;
+}
+
+export interface inputValuesProps extends inputValuesInterface {
+  register: any;
+  inputErrors: any;
+}
+
+export interface formInputs {
+  name: string;
+  emailAddress: string;
+  phoneNumber: string;
+  address: string;
+  zipCode: string;
+  city: string;
+  country: string;
+  eMoneyNumber: string;
+  eMoneyPIN: string;
 }
