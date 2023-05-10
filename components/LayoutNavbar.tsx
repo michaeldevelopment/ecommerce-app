@@ -5,11 +5,13 @@ import NavLinksMap from "./NavLinksMap";
 import Footer from "./Footer";
 import CartLayout from "./cartComponents/CartLayout";
 import LogoIcon from "../svg/LogoIcon";
+import HamburguerMenuContainer from "./HamburguerMenuContainer";
 
 const LayoutNavbar = ({ children }: navbarProps) => {
   return (
     <>
       <nav className={styles.navbar}>
+        <HamburguerMenuContainer />
         <LogoIcon />
         <NavLinksMap />
         <CartLayout />

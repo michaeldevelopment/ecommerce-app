@@ -4,12 +4,13 @@ import styles from "../styles/Footer.module.scss";
 import FacebookIcon from "../svg/FacebookIcon";
 import InstagramIcon from "../svg/InstagramIcon";
 import TwitterIcon from "../svg/TwitterIcon";
+import LogoIcon from "../svg/LogoIcon";
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
       <div>
-        <span> Logo </span> <NavLinksMap />
+        <LogoIcon /> <NavLinksMap />
       </div>
       <div>
         <p>
