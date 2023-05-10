@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { productInterface } from "../../types/dataTypes";
+import { productDetailTextProps } from "../../types/dataTypes";
 import productDetailStyles from "../../styles/ProductDetail.module.scss";
 import navPagesStyle from "../../styles/NavPages.module.scss";
 import { useProductsCartStore } from "../../store";
@@ -9,13 +9,8 @@ const ProductDetailText = ({
   name,
   description,
   slug,
-  image,
   price,
-  features,
-  includes,
-  gallery,
-  others,
-}: productInterface) => {
+}: productDetailTextProps) => {
   const addProductToCart = useProductsCartStore(
     (state) => state.addProductToCart
   );
@@ -41,7 +36,7 @@ const ProductDetailText = ({
   };
 
   return (
-    <span>
+    <section>
       {isNew && <small> NEW PRODUCT </small>}
       <h1>{name}</h1>
       <p>{description}</p>
@@ -59,7 +54,7 @@ const ProductDetailText = ({
           ADD TO CART
         </button>
       </div>
-    </span>
+    </section>
   );
 };
 

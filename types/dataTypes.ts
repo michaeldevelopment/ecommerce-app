@@ -49,6 +49,14 @@ export interface productsDataInterface extends productInterface {
   categoryImage: imageProductsInterface;
 }
 
+export interface productDetailTextProps {
+  slug: string;
+  name: string;
+  new: boolean;
+  description: string;
+  price: number;
+}
+
 export type productsDataListType = productsDataInterface[];
 
 export interface inputValuesInterface {

@@ -13,7 +13,10 @@ const InputValues = ({
 }: inputValuesProps) => {
   return (
     <>
-      <label htmlFor={label}> {label} </label>
+      <section>
+        <label htmlFor={label}> {label} </label>
+        {inputErrors[slug] && <small> {inputErrors[slug].message} </small>}
+      </section>
       <input
         name={label}
         id={label}
@@ -23,8 +26,6 @@ const InputValues = ({
         {...register(slug, validateOptions)}
         className={inputErrors[slug] ? styles.error : ""}
       ></input>
-
-      {inputErrors[slug] && <small> {inputErrors[slug].message} </small>}
     </>
   );
 };

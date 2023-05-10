@@ -10,11 +10,11 @@ export default function ProductText({
   slug,
 }: productTextProps) {
   return (
-    <span>
+    <section>
       {isNew && <small> NEW PRODUCT </small>}
       <h1>{name}</h1>
       <p>{description}</p>
       <Link href={`/${category}/${slug}`}> SEE PRODUCT </Link>
-    </span>
+    </section>
   );
 }

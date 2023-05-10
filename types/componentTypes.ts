@@ -5,7 +5,7 @@ import {
   inputValuesInterface,
   otherItemsInterface,
 } from "./dataTypes";
-import { productCartType } from "./globalStateTypes";
+import { productCartType, setStateType } from "./globalStateTypes";
 
 export interface navbarProps {
   children: ReactNode;
@@ -73,4 +73,8 @@ export interface formInputs {
   country: string;
   eMoneyNumber: string;
   eMoneyPIN: string;
+}
+
+export interface navMenuHamburguerProps {
+  setShowMenu: setStateType;
 }

@@ -17,10 +17,19 @@
 
 .productDetailContainer {
   display: flex;
-  gap: 20%;
+  flex-wrap: wrap;
+  gap: 100px;
   justify-content: center;
-  width: 50vw;
-  margin: 0 auto;
+
+  div:first-of-type {
+    float: left;
+    width: 550px;
+    text-align: justify;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
 
   p,
   li {
@@ -29,6 +38,7 @@
 
   ul {
     list-style-type: none;
+    padding-left: 0;
 
     span {
       color: colors.$dark-orange;
@@ -67,7 +77,10 @@
     height: auto;
   }
 
-  button {
+  a {
+    position: relative;
+    top: 15px;
+
     @include button.buttonStyle(
       colors.$dark-orange,
       colors.$white,

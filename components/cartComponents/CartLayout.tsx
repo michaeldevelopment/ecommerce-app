@@ -27,7 +27,7 @@ export default function CartLayout() {
         placement={"end"}
       >
         <Offcanvas.Header closeButton> {""} </Offcanvas.Header>
-        <CartProductsContainer isInCheckoutPage={false} textHeading="Cart" />;
+        <CartProductsContainer isInCheckoutPage={false} textHeading="Cart" />
       </Offcanvas>
     </>
   );

@@ -2,14 +2,14 @@
 @use "button.scss";
 
 @mixin mapContainerStyle {
-  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 50vw;
   gap: 50px;
   padding: 70px 0px;
 
-  & > span {
+  & > section {
+    width: 400px;
     align-self: center;
 
     small {
